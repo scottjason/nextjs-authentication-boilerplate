@@ -1,5 +1,4 @@
 export const isValidEmail = (email: string): boolean => {
-  if (window.location.hostname.includes('localhost')) return true;
   const atSymbol = email.indexOf('@');
   const dotSymbol = email.lastIndexOf('.');
   const spaceSymbol = email.indexOf(' ');
@@ -20,7 +19,6 @@ export const isValidEmail = (email: string): boolean => {
 };
 
 export const isValidPassword = (password: string): boolean => {
-  if (window.location.hostname.includes('localhost')) return true;
   if (password.length < 8 || password.length > 127) {
     return false;
   }
