@@ -11,6 +11,7 @@ module.exports = {
         black: {
           900: '#030202',
         },
+        'blue-accent': '#1A74E2',
       },
     },
   },

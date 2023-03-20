@@ -10,9 +10,9 @@ export const Button = ({ copy, callback }: Props): JSX.Element => {
     <button
       type='button'
       onClick={callback}
-      className='w-[275px] bg-white hover:bg-gray-100 text-gray-400 font-semibold py-2 px-4 border border-gray-400 rounded shadow'
+      className='w-[275px] bg-blue-accent tracking-widest text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow'
     >
-      {copy}
+      <p className='tracking-widest'>{copy}</p>
     </button>
   );
 };
