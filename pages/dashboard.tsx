@@ -8,7 +8,7 @@ export default function Dashboard() {
     e.preventDefault();
     try {
       await (await fetch('/api/sign-out')).json();
-      router.push('/dashboard');
+      router.push('/');
     } catch (_err) {
       router.push('/dashboard');
     }
