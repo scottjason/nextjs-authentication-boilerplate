@@ -3,6 +3,7 @@ import { serialize } from 'cookie';
 import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import { ACCESS_TOKEN } from '@/constants';
 import { generateToken } from '@/utils/api/jwt';
 
 const prisma = new PrismaClient();
@@ -39,7 +40,7 @@ export default async function handler(
     })) as { id: string; email: string };
 
     const token = await generateToken(user);
-    const cookie = serialize('x-access-token', token, cookieOpts);
+    const cookie = serialize(ACCESS_TOKEN, token, cookieOpts);
     res.setHeader('Set-Cookie', cookie);
     res.status(200).send(user);
   } catch (err) {

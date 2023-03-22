@@ -4,6 +4,8 @@ import { SignJWT, type JWTPayload } from 'jose';
 import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+import { ACCESS_TOKEN } from '@/constants';
+
 const prisma = new PrismaClient();
 
 type Response = {
@@ -63,7 +65,7 @@ export default async function handler(
       .sign(new TextEncoder().encode(process.env.JWT_SECRET));
 
     // Set Header
-    const cookie = serialize('x-access-token', token, cookieOpts);
+    const cookie = serialize(ACCESS_TOKEN, token, cookieOpts);
     res.setHeader('Set-Cookie', cookie);
 
     // Repond to the client
