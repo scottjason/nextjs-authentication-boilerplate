@@ -1,8 +1,9 @@
 import bcrypt from 'bcryptjs';
 import { serialize } from 'cookie';
-import { SignJWT, type JWTPayload } from 'jose';
 import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
+
+import { generateToken } from '@/utils/api/jwt';
 
 const prisma = new PrismaClient();
 
@@ -37,17 +38,7 @@ export default async function handler(
       select: userSelect,
     })) as { id: string; email: string };
 
-    const iat = Math.floor(Date.now() / 1000);
-    const exp = iat + 60 * 60; // one hour
-
-    const payload: JWTPayload = { _id: user.id, email: user.email };
-    const token = await new SignJWT({ ...payload })
-      .setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
-      .setExpirationTime(exp)
-      .setIssuedAt(iat)
-      .setNotBefore(iat)
-      .sign(new TextEncoder().encode(process.env.JWT_SECRET));
-
+    const token = await generateToken(user);
     const cookie = serialize('x-access-token', token, cookieOpts);
     res.setHeader('Set-Cookie', cookie);
     res.status(200).send(user);

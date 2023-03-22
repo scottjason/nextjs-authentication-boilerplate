@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Login } from '@/components/login';
-import { isValidEmail } from '@/utils/validation';
+import { isValidEmail } from '@/utils/client/validation';
 import { Button } from '@/components/common/Button';
 import { SubHeader } from '@/components/common/SubHeader';
 import { CreateAccount } from '@/components/create-account';

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Button } from './common/Button';
 import { SubHeader } from './common/SubHeader';
 
-import { isValidEmail, isValidPassword } from '@/utils/validation';
+import { isValidEmail, isValidPassword } from '@/utils/client/validation';
 
 type Props = {
   email: string;
