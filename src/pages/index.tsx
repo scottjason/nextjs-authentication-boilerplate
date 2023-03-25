@@ -1,18 +1,18 @@
-import * as React from 'react';
 import dynamic from 'next/dynamic';
-import { Button } from '@/components/common/button';
-import { isValidEmail } from '@/utils/client/validation';
-import { SubHeader } from '@/components/common/subheader';
+import * as React from 'react';
+import { Button } from '../components/common/button';
+import { SubHeader } from '../components/common/subheader';
+import { isValidEmail } from '../lib/client/validation';
 
 const DynamicLogin = dynamic(
-  import('@/components/login').then(module => {
+  import('../components/login').then(module => {
     const { Login } = module;
     return Login;
   })
 );
 
 const DynamicCreateAccount = dynamic(
-  import('@/components/create-account').then(module => {
+  import('../components/create-account').then(module => {
     const { CreateAccount } = module;
     return CreateAccount;
   })

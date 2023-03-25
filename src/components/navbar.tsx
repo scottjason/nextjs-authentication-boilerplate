@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { BsGithub } from 'react-icons/bs';
 import { TbBrandNextjs } from 'react-icons/tb';
 

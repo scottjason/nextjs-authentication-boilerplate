@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { authenticate } from './utils/middleware/auth';
+import { authenticate } from './lib/middleware/auth';
 
 export async function middleware(req: NextRequest, res: NextResponse) {
   const {

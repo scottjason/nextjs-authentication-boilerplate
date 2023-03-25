@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 interface Props {
   copy: string;
   color: string;

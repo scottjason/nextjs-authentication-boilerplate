@@ -1,10 +1,10 @@
+import { Prisma, PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import { serialize } from 'cookie';
-import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ACCESS_TOKEN } from '@/constants';
-import { generateToken } from '@/utils/api/jwt';
+import { ACCESS_TOKEN } from '../../constants';
+import { generateToken } from '../../lib/api/jwt';
 
 const prisma = new PrismaClient();
 

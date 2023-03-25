@@ -1,10 +1,10 @@
-import * as React from 'react';
 import { useRouter } from 'next/router';
+import * as React from 'react';
 import { Button } from './common/button';
 import { SubHeader } from './common/subheader';
 
-import { PASSWORD_ERROR } from '@/constants';
-import { isValidEmail, isValidPassword } from '@/utils/client/validation';
+import { PASSWORD_ERROR } from '../constants';
+import { isValidEmail, isValidPassword } from '../lib/client/validation';
 
 type Props = {
   email: string;

@@ -4,7 +4,7 @@ import { SignJWT, type JWTPayload } from 'jose';
 import { Prisma, PrismaClient } from '@prisma/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ACCESS_TOKEN } from '@/constants';
+import { ACCESS_TOKEN } from '../../constants';
 
 const prisma = new PrismaClient();
 

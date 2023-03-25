@@ -1,8 +1,6 @@
 {
-  "name": "nextjs",
+  "name": "nextjs-authentication-boilerplate",
   "version": "0.1.0",
-  "author": "Scott Jason",
-  "license": "MIT",
   "keywords": [
     "nextjs",
     "vercel",
@@ -19,14 +17,19 @@
     "typescript",
     "postgresql"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scottjason/nextjs-authentication-boilerplate.git"
+  },
+  "license": "MIT",
+  "author": "Scott Jason",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
-  },
-  "prisma": {
-    "schema": "db/schema.prisma"
+    "start": "next start",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@prisma/client": "^4.11.0",
@@ -51,11 +54,15 @@
     "dotenv": "^16.0.3",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
+    "husky": "^8.0.3",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
   },
   "engines": {
-    "npm": "^8.19.3",
-    "node": "^18.13.0"
+    "node": "^18.13.0",
+    "npm": "^8.19.3"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   }
 }
