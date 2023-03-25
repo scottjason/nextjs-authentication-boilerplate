@@ -45,8 +45,8 @@ export const CreateAccount = (props: Props): JSX.Element => {
   };
 
   return (
-    <React.Fragment>
-      <SubHeader copy={'enter password'} color={'text-slate-50'} />
+    <div className='flex items-center justify-center flex-col h-screen'>
+      <SubHeader copy={'ENTER PASSWORD'} color={'text-slate-50'} />
       <form onSubmit={handleSubmit} className='flex items-center justify-center flex-col'>
         <input
           onChange={e => setPassword(e.target.value)}
@@ -56,6 +56,9 @@ export const CreateAccount = (props: Props): JSX.Element => {
         />
         <Button copy={'CREATE ACCOUNT'} callback={handleSubmit} />
       </form>
-    </React.Fragment>
+      <p className='text-white opacity-80 mt-1.5'>
+        enter a password to create an account
+      </p>
+    </div>
   );
 };

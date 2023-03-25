@@ -4,6 +4,7 @@ type User = {
   id: string;
   email: string;
 };
+
 export const generateToken = async (user: User): Promise<string> => {
   const iat = Math.floor(Date.now() / 1000); // unix timestamp
   const exp = iat + 60 * 60; // timestamp + one hour

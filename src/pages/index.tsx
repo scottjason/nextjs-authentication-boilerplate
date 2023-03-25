@@ -44,11 +44,11 @@ export default function Home() {
 
   if (view === 'enter-email') {
     return (
-      <React.Fragment>
+      <div className='flex items-center justify-center flex-col h-screen'>
         {isEmailError ? (
           <SubHeader copy={'ENTER A VALID EMAIL'} color={'text-orange-200'} />
         ) : (
-          <SubHeader copy={'enter email'} color={'text-slate-50'} />
+          <SubHeader copy={'ENTER EMAIL'} color={'text-slate-50'} />
         )}
         <form
           noValidate
@@ -63,7 +63,8 @@ export default function Home() {
           />
           <Button copy={'CONTINUE'} callback={handleSubmit} />
         </form>
-      </React.Fragment>
+        <div className='h-8' />
+      </div>
     );
   } else if (view === 'login') {
     return <Login email={email} />;

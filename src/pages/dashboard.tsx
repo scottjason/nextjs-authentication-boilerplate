@@ -1,23 +1,19 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
-import { Button } from '@/components/common/Button';
+import { AiOutlineLogout } from 'react-icons/ai';
 
 export default function Dashboard() {
-  const router = useRouter();
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await (await fetch('/api/sign-out')).json();
-      router.push('/');
-    } catch (_err) {
-      router.push('/dashboard');
-    }
+  const signOut = () => {
+    const bc = new BroadcastChannel(process.env.NEXT_PUBLIC_BC_CHANNEL as string);
+    bc.postMessage('sign-out');
   };
-
   return (
-    <div className='text-slate-100  flex flex-col'>
-      <p className='text-3xl text-center'>AUTHENTICATED</p>
-      <Button copy={'SIGN OUT'} callback={handleSubmit} />
+    <div>
+      <nav className='flex justify-end w-screen pl-20 pt-6 '>
+        <AiOutlineLogout
+          onClick={signOut}
+          className='text-white text-4xl opacity-70 mr-5 cursor-pointer'
+        />
+      </nav>
     </div>
   );
 }

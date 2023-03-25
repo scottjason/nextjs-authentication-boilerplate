@@ -45,8 +45,8 @@ export const Login = (props: Props): JSX.Element => {
   };
 
   return (
-    <React.Fragment>
-      <SubHeader copy={'welcome back!'} color={'text-slate-50'} />
+    <div className='flex items-center justify-center flex-col h-screen'>
+      <SubHeader copy={'ENTER PASSWORD'} color={'text-slate-50'} />
       <form onSubmit={handleSubmit} className='flex items-center justify-center flex-col'>
         <input
           onChange={e => setPassword(e.target.value)}
@@ -56,6 +56,7 @@ export const Login = (props: Props): JSX.Element => {
         />
         <Button copy={'LOGIN'} callback={handleSubmit} />
       </form>
-    </React.Fragment>
+      <p className='text-white opacity-80 mt-1.5'>enter your password to sign in</p>
+    </div>
   );
 };
