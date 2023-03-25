@@ -4,7 +4,7 @@
 
 ## Description
 
-Boilerplate with JWT authentication middleware using Edge Runtime. Includes multi-tab / multi-window sign-out with the [Broadcast API.](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+Boilerplate with JWT authentication middleware using Edge Runtime.
 
 Builit with NextJS, Typescript and Tailwind
 

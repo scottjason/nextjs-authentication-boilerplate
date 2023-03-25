@@ -1,9 +1,16 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
 
 export default function Dashboard() {
-  const signOut = () => {
-    const bc = new BroadcastChannel(process.env.NEXT_PUBLIC_BC_CHANNEL as string);
-    bc.postMessage('sign-out');
+  const router = useRouter();
+
+  const signOut = async () => {
+    try {
+      await (await fetch('/api/sign-out')).json();
+      router.push('/');
+    } catch (_err) {
+      router.push('/');
+    }
   };
   return (
     <div>
