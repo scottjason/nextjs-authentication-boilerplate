@@ -1,13 +1,14 @@
 # Next.js Authentication Boilerplate, Edge Middleware
 
-### Next.js JWT Authentication Boilerplate with static site rendering and serverless middleware using Edge Runtime, deployed to Vercel.
+### Next.js JWT Authentication Boilerplate with static site generation and serverless middleware using Edge Runtime, deployed to Vercel.
 
 ## Description
 
-Boilerplate with a JWT authentication middleware using Edge Runtime. Includes multi-tab / multi-window sign-out with the [Broadcast API.](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
+Boilerplate with JWT authentication middleware using Edge Runtime. Includes multi-tab / multi-window sign-out with the [Broadcast API.](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 
 Builit with NextJS, Typescript and Tailwind
-[Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
+
+-- [Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
 
 ## Requirements
 
@@ -19,7 +20,7 @@ Builit with NextJS, Typescript and Tailwind
 Clone the repo:
 
 ```shell
-git clone https://github.com/scottjason/nextjs-edge-runtime
+git clone git@github.com:scottjason/nextjs-authentication-boilerplate.git
 ```
 
 Then cd into the root directory and run `npm install`.
