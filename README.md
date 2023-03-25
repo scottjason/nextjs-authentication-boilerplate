@@ -6,7 +6,7 @@
 
 Boilerplate with JWT authentication middleware using Edge Runtime.
 
-Builit with NextJS, Typescript and Tailwind
+Builit with NextJS, Typescript, Prisma, PostgreSQL and Tailwind
 
 -- [Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
 
@@ -31,7 +31,6 @@ Next, add a `.env` file to the root directory, then copy and paste the following
 JWT_SECRET=your-jwt-secret
 DATABASE_URL=your-postgres-db-url
 BCRYPT_PASSWORD=your-bycrpt-password
-NEXT_PUBLIC_BC_CHANNEL=your-broadcast-channel-name
 ```
 
 Next run `prisma generate` to generate the Prisma Client based on the schema under the `/db` directory. Then to create a migration and synch the schema with the database, run `npx prisma migrate dev`.
