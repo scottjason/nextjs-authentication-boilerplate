@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { Button } from './common/Button';
-import { SubHeader } from './common/SubHeader';
+import { Button } from './common/button';
+import { SubHeader } from './common/subheader';
 
 import { PASSWORD_ERROR } from '@/constants';
 import { isValidEmail, isValidPassword } from '@/utils/client/validation';
@@ -33,7 +33,7 @@ export const Login = (props: Props): JSX.Element => {
       if (response.status === 401) {
         setIsInvalidCredens(true);
       } else {
-        router.push('/dashboard');
+        router.push('/dashboard', undefined, { shallow: true });
       }
     } catch (err) {
       setIsPasswordError(true);

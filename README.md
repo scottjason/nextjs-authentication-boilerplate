@@ -4,7 +4,7 @@
 
 ## Description
 
-Boilerplate with JWT authentication middleware using Edge Runtime.
+Boilerplate with JWT authentication middleware using Edge Runtime and lazy loading with dynamic imports.
 
 Builit with NextJS, Typescript, Prisma, PostgreSQL and Tailwind
 

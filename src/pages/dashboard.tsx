@@ -3,13 +3,12 @@ import { useRouter } from 'next/router';
 
 export default function Dashboard() {
   const router = useRouter();
-
   const signOut = async () => {
     try {
       await (await fetch('/api/sign-out')).json();
-      router.push('/');
+      router.push('/', undefined, { shallow: true });
     } catch (_err) {
-      router.push('/');
+      router.push('/dashboard', undefined, { shallow: true });
     }
   };
   return (

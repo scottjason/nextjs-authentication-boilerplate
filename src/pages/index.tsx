@@ -1,8 +1,8 @@
 import * as React from 'react';
 import dynamic from 'next/dynamic';
-import { Button } from '@/components/common/Button';
+import { Button } from '@/components/common/button';
 import { isValidEmail } from '@/utils/client/validation';
-import { SubHeader } from '@/components/common/SubHeader';
+import { SubHeader } from '@/components/common/subheader';
 
 const DynamicLogin = dynamic(
   import('@/components/login').then(module => {
