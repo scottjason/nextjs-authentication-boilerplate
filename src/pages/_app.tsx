@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
+import { NavBar } from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,10 +29,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>NextJS</title>
         <meta
           name='description'
-          content='NextJS with authentication middleware running in Edge Runtime'
+          content='NextJS authentication with middleware using Edge Runtime'
           key='desc'
         />
       </Head>
+      <NavBar />
       <Component {...pageProps} />
     </main>
   );

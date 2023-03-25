@@ -1,9 +1,22 @@
 import * as React from 'react';
-import { Login } from '@/components/login';
-import { isValidEmail } from '@/utils/client/validation';
+import dynamic from 'next/dynamic';
 import { Button } from '@/components/common/Button';
+import { isValidEmail } from '@/utils/client/validation';
 import { SubHeader } from '@/components/common/SubHeader';
-import { CreateAccount } from '@/components/create-account';
+
+const DynamicLogin = dynamic(
+  import('@/components/login').then(module => {
+    const { Login } = module;
+    return Login;
+  })
+);
+
+const DynamicCreateAccount = dynamic(
+  import('@/components/create-account').then(module => {
+    const { CreateAccount } = module;
+    return CreateAccount;
+  })
+);
 
 type Payload = {
   email: string;
@@ -44,7 +57,7 @@ export default function Home() {
 
   if (view === 'enter-email') {
     return (
-      <div className='flex items-center justify-center flex-col h-screen'>
+      <div className='absolute left-0 right-0 top-0 bottom-0 m-auto flex items-center justify-center flex-col'>
         {isEmailError ? (
           <SubHeader copy={'ENTER A VALID EMAIL'} color={'text-orange-200'} />
         ) : (
@@ -67,8 +80,8 @@ export default function Home() {
       </div>
     );
   } else if (view === 'login') {
-    return <Login email={email} />;
+    return <DynamicLogin email={email} />;
   } else {
-    return <CreateAccount email={email} />;
+    return <DynamicCreateAccount email={email} />;
   }
 }

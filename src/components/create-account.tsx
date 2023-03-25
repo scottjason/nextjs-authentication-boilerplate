@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Button } from './common/Button';
 import { SubHeader } from './common/SubHeader';
 
+import { PASSWORD_ERROR } from '@/constants';
 import { isValidEmail, isValidPassword } from '@/utils/client/validation';
 
 type Props = {
@@ -16,6 +17,7 @@ type Payload = Props & {
 export const CreateAccount = (props: Props): JSX.Element => {
   const router = useRouter();
   const { email } = props;
+  const [isPasswordError, setIsPasswordError] = React.useState<boolean>(false);
   const [password, setPassword] = React.useState<string>('');
 
   const makeReq = async (payload: Payload): Promise<void> => {
@@ -41,12 +43,20 @@ export const CreateAccount = (props: Props): JSX.Element => {
         password,
       };
       makeReq(payload);
+    } else if (!isValidPassword(password)) {
+      setIsPasswordError(true);
     }
   };
 
   return (
-    <div className='flex items-center justify-center flex-col h-screen'>
-      <SubHeader copy={'ENTER PASSWORD'} color={'text-slate-50'} />
+    <div className='absolute left-0 right-0 top-0 bottom-0 m-auto flex items-center justify-center flex-col'>
+      {isPasswordError ? (
+        <div className='mt-[27px]'>
+          <SubHeader copy={'ENTER A VALID PASSWORD'} color={'text-orange-200'} />
+        </div>
+      ) : (
+        <SubHeader copy={'ENTER PASSWORD'} color={'text-slate-50'} />
+      )}
       <form onSubmit={handleSubmit} className='flex items-center justify-center flex-col'>
         <input
           onChange={e => setPassword(e.target.value)}
@@ -56,9 +66,16 @@ export const CreateAccount = (props: Props): JSX.Element => {
         />
         <Button copy={'CREATE ACCOUNT'} callback={handleSubmit} />
       </form>
-      <p className='text-white opacity-80 mt-1.5'>
-        enter a password to create an account
-      </p>
+      {!isPasswordError && (
+        <p className='text-white opacity-80 mt-1.5 w-[320px] text-center'>
+          enter a password to create an account
+        </p>
+      )}
+      {isPasswordError && (
+        <p className='text-white text-xs opacity-80 mt-1.5 w-[320px] text-center'>
+          {PASSWORD_ERROR}
+        </p>
+      )}
     </div>
   );
 };

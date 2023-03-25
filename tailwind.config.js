@@ -14,6 +14,9 @@ module.exports = {
         'blue-accent': '#1A74E2',
       },
     },
+    screens: {
+      nav: { max: '540px' },
+    },
   },
   plugins: [],
 };
