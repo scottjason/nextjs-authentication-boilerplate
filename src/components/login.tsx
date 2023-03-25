@@ -23,7 +23,7 @@ export const Login = (props: Props): JSX.Element => {
 
   const makeReq = async (payload: Payload): Promise<void> => {
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
@@ -33,7 +33,7 @@ export const Login = (props: Props): JSX.Element => {
       if (response.status === 401) {
         setIsInvalidCredens(true);
       } else {
-        router.push('/dashboard', undefined, { shallow: true });
+        router.push('/dashboard');
       }
     } catch (err) {
       setIsPasswordError(true);

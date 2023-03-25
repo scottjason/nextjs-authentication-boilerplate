@@ -3,8 +3,8 @@ import bcrypt from 'bcryptjs';
 import { serialize } from 'cookie';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ACCESS_TOKEN } from '../../constants';
-import { generateToken } from '../../lib/api/jwt';
+import { ACCESS_TOKEN } from '../../../constants';
+import { generateToken } from '../../../lib/api/jwt';
 
 const prisma = new PrismaClient();
 

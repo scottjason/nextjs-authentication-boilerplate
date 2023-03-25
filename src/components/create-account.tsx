@@ -22,14 +22,14 @@ export const CreateAccount = (props: Props): JSX.Element => {
 
   const makeReq = async (payload: Payload): Promise<void> => {
     try {
-      await fetch('/api/create-account', {
+      await fetch('/api/auth/create-account', {
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      router.push('/dashboard', undefined, { shallow: true });
+      router.push('/dashboard');
     } catch (err) {
       console.log(err);
     }

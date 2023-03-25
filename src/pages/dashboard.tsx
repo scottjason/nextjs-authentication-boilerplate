@@ -1,14 +1,13 @@
-import * as React from 'react';
 import { useRouter } from 'next/router';
 
 export default function Dashboard() {
   const router = useRouter();
   const signOut = async () => {
     try {
-      await (await fetch('/api/sign-out')).json();
-      router.push('/', undefined, { shallow: true });
+      await (await fetch('/api/dashboard/sign-out')).json();
+      router.push('/');
     } catch (_err) {
-      router.push('/dashboard', undefined, { shallow: true });
+      router.push('/dashboard');
     }
   };
   return (

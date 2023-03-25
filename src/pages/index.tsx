@@ -21,7 +21,7 @@ export default function Home() {
       email,
     };
     try {
-      const response = await fetch('/api/account-check', {
+      const response = await fetch('/api/auth/email-lookup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

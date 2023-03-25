@@ -1,7 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { serialize } from 'cookie';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ACCESS_TOKEN } from '../../constants';
+import { ACCESS_TOKEN } from '../../../constants';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Set-Cookie', [
