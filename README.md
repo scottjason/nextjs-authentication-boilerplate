@@ -4,7 +4,7 @@
 
 ## Description
 
-Boilerplate with JWT authentication middleware using Edge Runtime and lazy loading with dynamic imports.
+Boilerplate with JWT authentication middleware using Edge Runtime.
 
 Builit with NextJS, Typescript, Prisma, PostgreSQL and Tailwind
 
@@ -33,7 +33,7 @@ DATABASE_URL=your-postgres-db-url
 BCRYPT_PASSWORD=your-bycrpt-password
 ```
 
-Next run `prisma generate` to generate the Prisma Client based on the schema under the `/db` directory. Then to create a migration and synch the schema with the database, run `npx prisma migrate dev`.
+Next run `prisma generate` to generate the Prisma Client based on the schema under the `/prisma` directory. Then to create a migration and synch the schema with the database, run `npx prisma migrate dev`.
 
 To apply the migrations to testing and production environments, run `npx prisma migrate deploy`, ideally as part of an automated CI/CD pipeline. Read more at [prisma.io.](https://www.prisma.io/docs/guides/deployment)
 

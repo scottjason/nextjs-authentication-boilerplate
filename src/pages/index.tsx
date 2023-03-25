@@ -1,22 +1,9 @@
-import dynamic from 'next/dynamic';
 import * as React from 'react';
 import { Button } from '../components/common/button';
 import { SubHeader } from '../components/common/subheader';
+import { CreateAccount } from '../components/create-account';
+import { Login } from '../components/login';
 import { isValidEmail } from '../lib/client/validation';
-
-const DynamicLogin = dynamic(
-  import('../components/login').then(module => {
-    const { Login } = module;
-    return Login;
-  })
-);
-
-const DynamicCreateAccount = dynamic(
-  import('../components/create-account').then(module => {
-    const { CreateAccount } = module;
-    return CreateAccount;
-  })
-);
 
 type Payload = {
   email: string;
@@ -80,8 +67,8 @@ export default function Home() {
       </div>
     );
   } else if (view === 'login') {
-    return <DynamicLogin email={email} />;
+    return <Login email={email} />;
   } else {
-    return <DynamicCreateAccount email={email} />;
+    return <CreateAccount email={email} />;
   }
 }
