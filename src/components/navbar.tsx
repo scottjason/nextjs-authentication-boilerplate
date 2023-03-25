@@ -3,7 +3,7 @@ import * as React from 'react';
 import { BsGithub } from 'react-icons/bs';
 import { TbBrandNextjs } from 'react-icons/tb';
 
-const repoUrl = 'https://github.com/scottjason/nextjs-edge-runtime';
+const repoUrl = 'https://github.com/scottjason/nextjs-authentication-boilerplate';
 
 export const NavBar = () => {
   return (
