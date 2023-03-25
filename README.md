@@ -1,12 +1,13 @@
-# Next.js Authentication Boilerplate
+# Next.js Authentication Boilerplate, Edge Middleware
 
-### Next.js JWT Authentication Boilerplate with serverless middleware using Edge Runtime, deployed to Vercel.
+### Next.js JWT Authentication Boilerplate with static site rendering and serverless middleware using Edge Runtime, deployed to Vercel.
 
 ## Description
 
-Boilerplate with a JWT authentication middleware using Edge Runtime. Includes multi-tab / multi-window sign-out with the Broadcast API.
+Boilerplate with a JWT authentication middleware using Edge Runtime. Includes multi-tab / multi-window sign-out with the [Broadcast API.](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 
 Builit with NextJS, Typescript and Tailwind
+[Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
 
 ## Requirements
 
@@ -34,15 +35,11 @@ NEXT_PUBLIC_BC_CHANNEL=your-broadcast-channel-name
 
 Next run `prisma generate` to generate the Prisma Client based on the schema under the `/db` directory. Then to create a migration and synch the schema with the database, run `npx prisma migrate dev`.
 
-To apply the migrations to testing and production environments, run `npx prisma migrate deploy`, ideally as part of an automated CI/CD pipeline. Read more on [prisma.io].(https://www.prisma.io/docs/guides/deployment)
+To apply the migrations to testing and production environments, run `npx prisma migrate deploy`, ideally as part of an automated CI/CD pipeline. Read more at [prisma.io.](https://www.prisma.io/docs/guides/deployment)
 
 Next run `npm run dev` to start development and open up your browser to `http://locahost:3000`.
 
 To build the production bundle, run `npm run build`.
-
-## Deployed App
-
-[Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
 
 ## License
 
