@@ -8,7 +8,7 @@ Boilerplate with JWT authentication, edge middleware and serverless api routes.
 
 Built with NextJS, Typescript, Prisma, PostgreSQL and Tailwind
 
--- [Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
+-- [Deployed to Vercel, open app.](https://nextjs-fullstack-auth-boilerplate.vercel.app/)
 
 ## Requirements
 
