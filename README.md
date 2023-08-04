@@ -1,12 +1,12 @@
 # Next.js Authentication Boilerplate
 
-### Next.js JWT Authentication Boilerplate with serverless middleware deployed to Vercel.
+### Next.js JWT Authentication Boilerplate with edge middleware and serverless api routes, deployed to Vercel.
 
 ## Description
 
-Boilerplate with JWT authentication, serverless middleware and api routes.
+Boilerplate with JWT authentication, edge middleware and serverless api routes.
 
-Builit with NextJS, Typescript, Prisma, PostgreSQL and Tailwind
+Built with NextJS, Typescript, Prisma, PostgreSQL and Tailwind
 
 -- [Deployed to Vercel, open app.](https://nextjs-edge-runtime.vercel.app/)
 
