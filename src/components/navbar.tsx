@@ -11,7 +11,7 @@ export const NavBar = () => {
         NextJS Authentication Boilerplate
       </p>
       <p className='text-white ml-[5.5rem] nav:hidden opacity-80'>
-        Serverless Middleware using Edge Runtime
+        Serverless Middleware
       </p>
       <div onClick={() => window.open(repoUrl, '_blank')}>
         <BsGithub className='absolute z-10 cursor-pointer top-8 right-8 mt-[5px] mr-[5px] text-white w-9 h-9' />
