@@ -5,8 +5,10 @@ export default function Dashboard() {
   const signOut = async () => {
     try {
       await (await fetch('/api/dashboard/sign-out')).json();
+      console.log(8);
       router.push('/');
     } catch (_err) {
+      console.log(11);
       router.push('/dashboard');
     }
   };
