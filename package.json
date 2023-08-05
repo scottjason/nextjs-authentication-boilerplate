@@ -24,7 +24,7 @@
   "license": "MIT",
   "author": "Scott Jason",
   "scripts": {
-    "build": "next build",
+    "build": "next build && rm -rf .next",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
